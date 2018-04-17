@@ -17,8 +17,11 @@ def fix_path(include_dev_libs_path=False):
         if DEV_SITEPACKAGES_DIR not in sys.path:
             sys.path.insert(1, DEV_SITEPACKAGES_DIR)
 
+    # make sure we don't have two modules in the same namespace - if we just
+    # did a sys.path.insert() the .pth file wouldn't be called
     if SITEPACKAGES_DIR not in sys.path:
-        sys.path.insert(1, PROD_SITEPACKAGES_DIR)
+        from google.appengine.ext import vendor
+        vendor.add(PROD_SITEPACKAGES_DIR)
 
 
 def get_app_config():
