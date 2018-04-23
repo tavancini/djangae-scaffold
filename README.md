@@ -16,7 +16,7 @@ $ django-admin.py startproject  --template https://github.com/potatolondon/djang
 ```
       
 - Run `cd projectname && ./install_deps` to install dependencies into a 'sitepackages' folder which is added to the path. 
-- Run `python manage.py check --deploy --settings=projectname.settings_live` to run all security checks. Replace `projectname` with your new app name.
+- Run `python manage.py check --deploy --settings=projectname.conf.settings_live` to run all security checks. Replace `projectname` with your new app name.
 - Run `python manage.py runserver`
 
 Each time you run the `install_deps` script helper your sitepackages will be wiped out and reinstalled with pip. The SDK will only be downloaded the first time (as it's a large download).

@@ -19,7 +19,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
-from .boot import get_app_config
+from ..boot import get_app_config
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = get_app_config().secret_key
 
@@ -83,7 +83,7 @@ TEMPLATES = [
 SILENCED_SYSTEM_CHECKS = [
     'security.W003', # We're using session_csrf version of CsrfMiddleware, so we can skip that check
 ]
-from .boot import register_custom_checks
+from ..boot import register_custom_checks
 register_custom_checks()
 
 CSP_REPORT_URI = reverse_lazy('report_csp')

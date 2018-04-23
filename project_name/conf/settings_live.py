@@ -1,4 +1,4 @@
-from {{ project_name }}.settings import *
+from .settings_base import *
 
 SESSION_COOKIE_SECURE = True
 SECURE_HSTS_SECONDS = 2592000 #30 days
